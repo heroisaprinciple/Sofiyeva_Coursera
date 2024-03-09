@@ -4,4 +4,5 @@ by University of Colorado Boulder.
 
 This is a simple programming assignment that prints statistics to the command line using a variety of c-programming operators and features.
 
-To compile and run the project, use ``gcc -o stats.out stats.c`` and ``./stats.out``.
+To compile and run the project, use ``gcc -o stats.out stats.c -lm`` and ``./stats.out``.
+Compile always with ``-lm`` flag to link the math library.
