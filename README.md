@@ -14,14 +14,19 @@ Here I will create a build system using the GNU tools, GCC and GNU Make.
 This assignment will require me to compile multiple files, link them together and create a final output executable. 
 Platforms to support: the host environment and the target embedded system MSP432. 
 The host system will allow to simulate software on a host platform.
-The host embedded system will use the native compiler, ``gcc``. 
-The target embedded system will use the cross compiler, ``arm-none-eabi-gcc``.
+The host embedded system will use the native compiler, gcc. 
+The target embedded system will use the cross compiler, arm-none-eabi-gcc.
 
 Preprocessor, assembly, object, dependency, executable, and map output files are already generated.
-(No need to run `make build PLATFORM=MSP432` and `make build PLATFORM=HOST`)
 Go to `assignment2/m2/src` and run `./c1m2.out`. There you'll see an output:
 ````
-hehe 1
 aXy72_L+R
 ````
 
+In ``src`` directory run ``make build PLATFORM=HOST`` to see info about the system:
+````
+gcc  -DHOST  -I../include/common -o c1m2.out main.c memory.c
+size c1m2.out
+   text    data     bss     dec     hex filename
+   2137     600      24    2761     ac9 c1m2.out
+````
