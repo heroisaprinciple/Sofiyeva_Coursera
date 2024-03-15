@@ -93,8 +93,8 @@ void printArray(const unsigned char* test, int length) {
 }
 
 void printStatistics(const unsigned char* test, int length) {
-    printf("The mean is: %f\n", round(findMean(test, length)));
-    printf("The median is: %f\n", round(findMedian(test, length)));
+    printf("The mean is: %f\n", floor((findMean(test, length))));
+    printf("The median is: %f\n", floor(findMedian(test, length)));
     printf("The max is: %d\n", findMaximum(test, length));
     printf("The min is: %d\n", findMinimum(test, length));
 }
