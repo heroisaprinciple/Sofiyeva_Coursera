@@ -13,6 +13,10 @@ COMMON_FLAGS = -Wall -Werror -g -O0 -std=c99
 HOST_FLAGS =
 MSP432_FLAGS = -mcpu=cortex-m4 -mthumb -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=nosys.specs
 
+# Compile switches
+COURSE1=false
+VERBOSE=false
+
 # Platform Specific Flags
 ifeq ($(PLATFORM),MSP432)
     CC = $(CROSS_CC)
@@ -20,6 +24,14 @@ ifeq ($(PLATFORM),MSP432)
     CFLAGS += $(MSP432_FLAGS) -DMSP432
 else ifeq ($(PLATFORM),HOST)
     CFLAGS += $(HOST_FLAGS) -DHOST
+endif
+
+ifeq ($(COURSE1), true)
+	CFLAGS += -DCOURSE1
+endif
+
+ifeq ($(VERBOSE), true)
+	CFLAGS += -DVERBOSE
 endif
 
 # Build Targets

@@ -7,7 +7,7 @@
  * sorting, and printing statistics.
  *
  * @author Arina Sofiyeva
- * @date 08.03.2024
+ * @date 28.03.2024
  *
  */
 
@@ -87,14 +87,17 @@ int findMinimum(const unsigned char* test, int length) {
 }
 
 void printArray(const unsigned char* test, int length) {
-    for (int i = length - 1; i >= 0; i--) {
-        printf("El: %d\n", test[i]);
-    }
+    #ifdef VERBOSE
+        for (int i = length - 1; i >= 0; i--) {
+            printf("attempt1\n");
+            PRINTF("El: %d\n", test[i]);
+        }
+    #endif
 }
 
 void printStatistics(const unsigned char* test, int length) {
-    printf("The mean is: %f\n", floor((findMean(test, length))));
-    printf("The median is: %f\n", floor(findMedian(test, length)));
-    printf("The max is: %d\n", findMaximum(test, length));
-    printf("The min is: %d\n", findMinimum(test, length));
+    PRINTF("The mean is: %f\n", floor((findMean(test, length))));
+    PRINTF("The median is: %f\n", floor(findMedian(test, length)));
+    PRINTF("The max is: %d\n", findMaximum(test, length));
+    PRINTF("The min is: %d\n", findMinimum(test, length));
 }
