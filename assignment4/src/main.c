@@ -12,9 +12,14 @@
  */
 #include "../include/common/platform.h"
 #include "../include/common/memory.h"
-#include "course1.c"
+#include "../include/common/course1.h"
+#include "../include/common/stats.h"
+#include "../include/common/data.h"
+#include <stdint.h>
+#include <stddef.h>
+#include <math.h>
 
-int main() {}
+int main() {
     #ifdef COURSE1
         printf("The function course1 is being called.\n");
         course1();

@@ -118,4 +118,3 @@ int8_t test_memset();
 int8_t test_reverse();
 
 #endif /* __COURSE1_H__ */
-

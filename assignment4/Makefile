@@ -2,7 +2,7 @@
 include sources.mk
 
 # Default target
-TARGET = c1m2
+TARGET = assignment4
 
 # Compiler Definitions
 CC = gcc
@@ -20,7 +20,7 @@ VERBOSE=false
 # Platform Specific Flags
 ifeq ($(PLATFORM),MSP432)
     CC = $(CROSS_CC)
-    LDFLAGS += -T ../msp432p401r.lds
+    LDFLAGS += -T msp432p401r.lds
     CFLAGS += $(MSP432_FLAGS) -DMSP432
 else ifeq ($(PLATFORM),HOST)
     CFLAGS += $(HOST_FLAGS) -DHOST

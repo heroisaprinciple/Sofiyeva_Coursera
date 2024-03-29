@@ -35,3 +35,23 @@ size c1m2.out
 
 ----------------------------------------------------------
 <h2>The fourth week:</h2>
+I will reuse my earlier assignments and add some new functions that manipulate memory. 
+I will test it on the host machine, but my code should compile for both the target platform and host platform.
+
+Run ``make PLATFORM=HOST build`` and you'll see such output:
+```
+gcc  -DHOST -MMD -MF src/course1.d -MP -MT"src/course1.d src/course1.o" -c src/course1.c
+gcc  -DHOST -MMD -MF src/data.d -MP -MT"src/data.d src/data.o" -c src/data.c
+gcc  -DHOST -MMD -MF src/memory.d -MP -MT"src/memory.d src/memory.o" -c src/memory.c
+gcc  -DHOST -MMD -MF src/main.d -MP -MT"src/main.d src/main.o" -c src/main.c
+gcc  -DHOST  -Iinclude/common -Iinclude/msp432 -Iinclude/CMSIS -o assignment4.out src/main.c src/memory.c src/data.c src/course1.c src/stats.c
+
+size assignment4.out
+   text    data     bss     dec     hex filename
+   8030     640       8    8678    21e6 assignment4.out
+
+```
+You can also run ``make VERBOSE=1 PLATFORM=HOST build``.
+
+or: ``make PLATFORM=MSP432 build``, but you won't see the resulting binary on the host machine.
+Moreover, you'll encounter several warnings about I/O system.

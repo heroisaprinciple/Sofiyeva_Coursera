@@ -10,6 +10,10 @@
  * @date March 28 2024
  *
  */
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <math.h>
 #include "memory.h"
 
 /***********************************************************
@@ -94,6 +98,13 @@ uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value) {
     for (int i = 0; i < length; i++) {
         *src = value;
         src++;
+    }
+    return src;
+}
+
+uint8_t * my_memzero(uint8_t * src, size_t length) {
+    for (size_t i = 0; i < length; i++) {
+        *(src + i) = 0;
     }
     return src;
 }

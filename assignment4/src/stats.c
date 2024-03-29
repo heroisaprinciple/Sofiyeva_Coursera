@@ -11,24 +11,25 @@
  *
  */
 
-#include <stdio.h>
-#include "stats.h"
-#include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+#include "../include/common/stats.h"
+#include "../include/common/platform.h"
+#include <stdlib.h>
 
 #define SIZE (40)
 
-void main() {
-    unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
-                                 114, 88,   45,  76, 123,  87,  25,  23,
-                                 200, 122, 150, 90,   92,  87, 177, 244,
-                                 201,   6,  12,  60,   8,   2,   5,  67,
-                                 7,  87, 250, 230,  99,   3, 100,  90};
-
-    sortArray(test, SIZE);
-    printArray(test, SIZE);
-    printStatistics(test, SIZE);
-}
+//void main() {
+//    unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+//                                 114, 88,   45,  76, 123,  87,  25,  23,
+//                                 200, 122, 150, 90,   92,  87, 177, 244,
+//                                 201,   6,  12,  60,   8,   2,   5,  67,
+//                                 7,  87, 250, 230,  99,   3, 100,  90};
+//
+//    sortArray(test, SIZE);
+//    printArray(test, SIZE);
+//    printStatistics(test, SIZE);
+//}
 
 double findMean(const unsigned char* test, int length) {
     double sum = 0;
@@ -96,8 +97,8 @@ void printArray(const unsigned char* test, int length) {
 }
 
 void printStatistics(const unsigned char* test, int length) {
-    PRINTF("The mean is: %f\n", floor((findMean(test, length))));
-    PRINTF("The median is: %f\n", floor(findMedian(test, length)));
+    PRINTF("The mean is: %f\n", (findMean(test, length)));
+    PRINTF("The median is: %f\n", findMedian(test, length));
     PRINTF("The max is: %d\n", findMaximum(test, length));
     PRINTF("The min is: %d\n", findMinimum(test, length));
 }
