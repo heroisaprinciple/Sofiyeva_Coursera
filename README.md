@@ -51,6 +51,7 @@ size assignment4.out
    8030     640       8    8678    21e6 assignment4.out
 
 ```
+In addition, object files will be generated.
 You can also run ``make VERBOSE=1 PLATFORM=HOST build``.
 
 or: ``make PLATFORM=MSP432 build``, but you won't see the resulting binary on the host machine.

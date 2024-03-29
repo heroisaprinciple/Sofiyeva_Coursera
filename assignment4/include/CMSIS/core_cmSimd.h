@@ -2,7 +2,7 @@
  * @file     core_cmSimd.h
  * @brief    CMSIS Cortex-M SIMD Header File
  * @version  V4.30
- * @date     15 March 2024
+ * @date     28 March 2024
  ******************************************************************************/
 
 #if   defined ( __ICCARM__ )

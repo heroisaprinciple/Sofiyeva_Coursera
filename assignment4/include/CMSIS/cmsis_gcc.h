@@ -2,7 +2,7 @@
  * @file     cmsis_gcc.h
  * @brief    CMSIS Cortex-M Core Function/Instruction Header File
  * @version  V4.30
- * @date     15 March 2024
+ * @date     28 March 2024
  ******************************************************************************/
 
 #ifndef __CMSIS_GCC_H

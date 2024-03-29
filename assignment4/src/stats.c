@@ -90,7 +90,6 @@ int findMinimum(const unsigned char* test, int length) {
 void printArray(const unsigned char* test, int length) {
     #ifdef VERBOSE
         for (int i = length - 1; i >= 0; i--) {
-            printf("attempt1\n");
             PRINTF("El: %d\n", test[i]);
         }
     #endif

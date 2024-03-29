@@ -7,7 +7,7 @@
  * sorting, and printing statistics.
  *
  * @author Arina Sofiyeva
- * @date 08.03.2024
+ * @date 28.03.2024
  *
  */
 #ifndef __STATS_H__
